@@ -1,0 +1,1652 @@
+[
+  {
+    "model": "tagio.tag",
+    "pk": 1,
+    "fields": {
+      "uid": "da5a29f6-b9c4-4ceb-9645-4cb9377e197c",
+      "created_at": "2023-04-03T15:50:26.995Z",
+      "updated_at": "2023-04-03T15:57:34.770Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Seating",
+      "i18n": "PRODUCT_CATEGORY.SEATING",
+      "slug": "product-seating",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 2,
+    "fields": {
+      "uid": "a72446a6-d1f2-4880-b470-71f210274e17",
+      "created_at": "2023-04-03T15:50:26.998Z",
+      "updated_at": "2023-04-03T15:50:26.998Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Sofa & Poufs",
+      "i18n": "PRODUCT_CATEGORY.SEATING__SOFA_AND_POUFS",
+      "slug": "product-seating-sofa-poufs",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 3,
+    "fields": {
+      "uid": "0274ef1a-acb5-41eb-b60a-e881cb38c053",
+      "created_at": "2023-04-03T15:50:26.999Z",
+      "updated_at": "2023-04-03T15:50:26.999Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Modular sofas",
+      "i18n": "PRODUCT_CATEGORY.SEATING__MODULAR_SOFAS",
+      "slug": "product-seating-modular-sofas",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 4,
+    "fields": {
+      "uid": "9aa6e096-4e8f-4ae2-a696-786eb236ae4f",
+      "created_at": "2023-04-03T15:50:27.000Z",
+      "updated_at": "2023-04-03T15:50:27.000Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Chair Upholstery",
+      "i18n": "PRODUCT_CATEGORY.SEATING__CHAIR_UPHOLSTERY",
+      "slug": "product-seating-chair-upholstery",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 5,
+    "fields": {
+      "uid": "6ddb152b-5aba-416a-ab95-fab46094ac27",
+      "created_at": "2023-04-03T15:50:27.001Z",
+      "updated_at": "2023-04-03T15:50:27.001Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Chair",
+      "i18n": "PRODUCT_CATEGORY.SEATING__CHAIR",
+      "slug": "product-seating-chair",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 6,
+    "fields": {
+      "uid": "380cc10d-55db-4d39-b515-1e1451c59642",
+      "created_at": "2023-04-03T15:50:27.003Z",
+      "updated_at": "2023-04-03T15:50:27.003Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Armchair",
+      "i18n": "PRODUCT_CATEGORY.SEATING__ARMCHAIR",
+      "slug": "product-seating-armchair",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 7,
+    "fields": {
+      "uid": "43f2f6a0-431c-40ac-8de6-63f6359c2476",
+      "created_at": "2023-04-03T15:50:27.003Z",
+      "updated_at": "2023-04-03T15:50:27.003Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Benches",
+      "i18n": "PRODUCT_CATEGORY.SEATING__BENCHES",
+      "slug": "product-seating-benches",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 8,
+    "fields": {
+      "uid": "57f2fa21-17ff-4a40-a8b0-40447a276785",
+      "created_at": "2023-04-03T15:50:27.004Z",
+      "updated_at": "2023-04-03T15:50:27.004Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Barstool",
+      "i18n": "PRODUCT_CATEGORY.SEATING__BARSTOOL",
+      "slug": "product-seating-barstool",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 9,
+    "fields": {
+      "uid": "a874e417-80f0-452b-8700-141d4ccf5c79",
+      "created_at": "2023-04-03T15:50:27.005Z",
+      "updated_at": "2023-04-03T15:50:27.005Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Office chair",
+      "i18n": "PRODUCT_CATEGORY.SEATING__OFFICE_CHAIR",
+      "slug": "product-seating-office-chair",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 10,
+    "fields": {
+      "uid": "f5e71894-4e48-47d5-8029-28c94d48cabb",
+      "created_at": "2023-04-03T15:50:27.006Z",
+      "updated_at": "2023-04-03T15:50:27.006Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Swivel chair",
+      "i18n": "PRODUCT_CATEGORY.SEATING__SWIVEL_CHAIR",
+      "slug": "product-seating-swivel-chair",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 11,
+    "fields": {
+      "uid": "5775aa09-1d44-486a-bcb3-7ba8388d8346",
+      "created_at": "2023-04-03T15:50:27.007Z",
+      "updated_at": "2023-04-03T15:50:27.007Z",
+      "parent": 1,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.SEATING__OTHERS",
+      "slug": "product-seating-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 12,
+    "fields": {
+      "uid": "35997727-cba5-44bd-b156-bad5738c8b34",
+      "created_at": "2023-04-03T15:50:27.007Z",
+      "updated_at": "2023-04-03T15:57:52.296Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Table",
+      "i18n": "PRODUCT_CATEGORY.TABLE",
+      "slug": "product-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 13,
+    "fields": {
+      "uid": "953fd6bf-1fc1-48ae-a495-8a66a408ab4d",
+      "created_at": "2023-04-03T15:50:27.008Z",
+      "updated_at": "2023-04-03T15:50:27.008Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Dining table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__DINING_TABLE",
+      "slug": "product-table-dining-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 14,
+    "fields": {
+      "uid": "e24804dc-72a7-42cb-8911-2c390a7f7a2c",
+      "created_at": "2023-04-03T15:50:27.009Z",
+      "updated_at": "2023-04-03T15:50:27.009Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Round table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__ROUND_TABLE",
+      "slug": "product-table-round-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 15,
+    "fields": {
+      "uid": "bdf2e2cd-ac04-4590-810e-8c6fb347b62a",
+      "created_at": "2023-04-03T15:50:27.010Z",
+      "updated_at": "2023-04-03T15:50:27.010Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Coffee table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__COFFEE_TABLE",
+      "slug": "product-table-coffee-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 16,
+    "fields": {
+      "uid": "ac365358-56bc-4a09-a131-4ddaf0d2639a",
+      "created_at": "2023-04-03T15:50:27.010Z",
+      "updated_at": "2023-04-03T15:50:27.010Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "High table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__HIGH_TABLE",
+      "slug": "product-table-high-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 17,
+    "fields": {
+      "uid": "747ff31c-507a-4173-a658-8bebe9e2a109",
+      "created_at": "2023-04-03T15:50:27.011Z",
+      "updated_at": "2023-04-03T15:50:27.011Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Sofa table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__SOFA_TABLE",
+      "slug": "product-table-sofa-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 18,
+    "fields": {
+      "uid": "78ff86d4-3084-4877-a1e5-3c1f1aedb5b0",
+      "created_at": "2023-04-03T15:50:27.012Z",
+      "updated_at": "2023-04-03T15:50:27.012Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Side table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__SIDE_TABLE",
+      "slug": "product-table-side-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 19,
+    "fields": {
+      "uid": "3c23380f-ce12-49fd-8f4b-1196a2d0af2d",
+      "created_at": "2023-04-03T15:50:27.013Z",
+      "updated_at": "2023-04-03T15:50:27.013Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Office table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__OFFICE_TABLE",
+      "slug": "product-table-office-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 20,
+    "fields": {
+      "uid": "0e6d05c4-d06f-4573-8cf9-79b9446dc644",
+      "created_at": "2023-04-03T15:50:27.013Z",
+      "updated_at": "2023-04-03T15:50:27.013Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Conference table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__CONFERENCE_TABLE",
+      "slug": "product-table-conference-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 21,
+    "fields": {
+      "uid": "8e7b251f-cf14-470a-856a-2728eb0c625f",
+      "created_at": "2023-04-03T15:50:27.014Z",
+      "updated_at": "2023-04-03T15:50:27.014Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Outdoor table",
+      "i18n": "PRODUCT_CATEGORY.TABLE__OUTDOOR_TABLE",
+      "slug": "product-table-outdoor-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 22,
+    "fields": {
+      "uid": "2a0c33d9-6afc-4af1-a4e9-d182f54c6b10",
+      "created_at": "2023-04-03T15:50:27.015Z",
+      "updated_at": "2023-04-03T15:50:27.015Z",
+      "parent": 12,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.TABLE__OTHERS",
+      "slug": "product-table-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 23,
+    "fields": {
+      "uid": "b494a22d-40aa-4cf1-b464-8eae5cb3fcce",
+      "created_at": "2023-04-03T15:50:27.016Z",
+      "updated_at": "2023-04-03T15:57:23.266Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Storage & Shelves",
+      "i18n": "PRODUCT_CATEGORY.STORAGE_AND_SHELVES",
+      "slug": "product-storage-shelves",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 24,
+    "fields": {
+      "uid": "6da8f5dc-c6c4-4139-95d1-f6a10de1d90c",
+      "created_at": "2023-04-03T15:50:27.016Z",
+      "updated_at": "2023-04-03T15:50:27.016Z",
+      "parent": 23,
+      "category": "PRODUCT",
+      "name": "Shelves",
+      "i18n": "PRODUCT_CATEGORY.STORAGE_AND_SHELVES__SHELVES",
+      "slug": "product-storage-shelves-shelves",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 25,
+    "fields": {
+      "uid": "81d00060-993c-42f7-85f1-5b7860724a9e",
+      "created_at": "2023-04-03T15:50:27.017Z",
+      "updated_at": "2023-04-03T15:50:27.017Z",
+      "parent": 23,
+      "category": "PRODUCT",
+      "name": "Bookcase",
+      "i18n": "PRODUCT_CATEGORY.STORAGE_AND_SHELVES__BOOKCASE",
+      "slug": "product-storage-shelves-bookcase",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 26,
+    "fields": {
+      "uid": "b3a471f4-9a03-4da6-86de-561c5d2a8a0d",
+      "created_at": "2023-04-03T15:50:27.018Z",
+      "updated_at": "2023-04-03T15:50:27.018Z",
+      "parent": 23,
+      "category": "PRODUCT",
+      "name": "Cabinets and sideboards",
+      "i18n": "PRODUCT_CATEGORY.STORAGE_AND_SHELVES__CABINETS_AND_SIDEBOARDS",
+      "slug": "product-storage-shelves-cabinets-and-sideboards",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 27,
+    "fields": {
+      "uid": "f57dbf5b-df56-422c-86cd-50c14843b529",
+      "created_at": "2023-04-03T15:50:27.019Z",
+      "updated_at": "2023-04-03T15:50:27.019Z",
+      "parent": 23,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.STORAGE_AND_SHELVES__OTHERS",
+      "slug": "product-storage-shelves-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 28,
+    "fields": {
+      "uid": "ab586eaf-1cdb-4c6f-b1d8-865b1f93f0a7",
+      "created_at": "2023-04-03T15:50:27.019Z",
+      "updated_at": "2023-04-03T15:56:51.246Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Lighting",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING",
+      "slug": "product-lighting",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 29,
+    "fields": {
+      "uid": "d8ce4303-e954-45a5-81cb-2751472a324f",
+      "created_at": "2023-04-03T15:50:27.020Z",
+      "updated_at": "2023-04-03T15:50:27.020Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Pendent Lamp",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__PENDENT_LAMP",
+      "slug": "product-lighting-pendent-lamp",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 30,
+    "fields": {
+      "uid": "a1d0f964-ffdb-4137-89d5-c55ce72a8f63",
+      "created_at": "2023-04-03T15:50:27.020Z",
+      "updated_at": "2023-04-03T15:50:27.020Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Table Lamp",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__TABLE_LAMP",
+      "slug": "product-lighting-table-lamp",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 31,
+    "fields": {
+      "uid": "154222c7-1834-4dda-b0f7-f1291f44f566",
+      "created_at": "2023-04-03T15:50:27.021Z",
+      "updated_at": "2023-04-03T15:50:27.021Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Wall Lamp",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__WALL_LAMP",
+      "slug": "product-lighting-wall-lamp",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 32,
+    "fields": {
+      "uid": "4c52b95b-df5e-41dd-842e-16dcd1008948",
+      "created_at": "2023-04-03T15:50:27.022Z",
+      "updated_at": "2023-04-03T15:50:27.022Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Floor Lamp",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__FLOOR_LAMP",
+      "slug": "product-lighting-floor-lamp",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 33,
+    "fields": {
+      "uid": "68bce46c-d8f0-495e-9dbd-ef6af0244a24",
+      "created_at": "2023-04-03T15:50:27.022Z",
+      "updated_at": "2023-04-03T15:50:27.022Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Portable lamp",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__PORTABLE_LAMP",
+      "slug": "product-lighting-portable-lamp",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 34,
+    "fields": {
+      "uid": "cf49fb99-8497-483c-8243-b37350e14da7",
+      "created_at": "2023-04-03T15:50:27.023Z",
+      "updated_at": "2023-04-03T15:50:27.023Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Outdoor Lamp",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__OUTDOOR_LAMP",
+      "slug": "product-lighting-outdoor-lamp",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 35,
+    "fields": {
+      "uid": "76d53084-8894-473a-9fbd-339d6de10132",
+      "created_at": "2023-04-03T15:50:27.024Z",
+      "updated_at": "2023-04-03T15:50:27.024Z",
+      "parent": 28,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.LIGHTING__OTHERS",
+      "slug": "product-lighting-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 36,
+    "fields": {
+      "uid": "49aa680e-8a28-4715-b186-b226d17100dd",
+      "created_at": "2023-04-03T15:50:27.024Z",
+      "updated_at": "2023-04-03T15:56:21.601Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Bedroom",
+      "i18n": "PRODUCT_CATEGORY.BEDROOM",
+      "slug": "product-bedroom",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 37,
+    "fields": {
+      "uid": "7caf91cb-f8d6-4352-a532-0c0f2443c013",
+      "created_at": "2023-04-03T15:50:27.025Z",
+      "updated_at": "2023-04-03T15:50:27.025Z",
+      "parent": 36,
+      "category": "PRODUCT",
+      "name": "Bed",
+      "i18n": "PRODUCT_CATEGORY.BEDROOM__BED",
+      "slug": "product-bedroom-bed",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 38,
+    "fields": {
+      "uid": "b3e59037-23b8-437c-852a-7702fc645fc3",
+      "created_at": "2023-04-03T15:50:27.026Z",
+      "updated_at": "2023-04-03T15:50:27.026Z",
+      "parent": 36,
+      "category": "PRODUCT",
+      "name": "Bedclothes",
+      "i18n": "PRODUCT_CATEGORY.BEDROOM__BEDCLOTHES",
+      "slug": "product-bedroom-bedclothes",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 39,
+    "fields": {
+      "uid": "9a04e9c2-40aa-44b9-aa22-05b0e4c6cbd6",
+      "created_at": "2023-04-03T15:50:27.026Z",
+      "updated_at": "2023-04-03T15:50:27.026Z",
+      "parent": 36,
+      "category": "PRODUCT",
+      "name": "Bedroom furnitures",
+      "i18n": "PRODUCT_CATEGORY.BEDROOM__BEDROOM_FURNITURE",
+      "slug": "product-bedroom-bedroom-furnitures",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 40,
+    "fields": {
+      "uid": "8dd822be-607e-4881-ad12-34fd36f23cb7",
+      "created_at": "2023-04-03T15:50:27.027Z",
+      "updated_at": "2023-04-03T15:50:27.027Z",
+      "parent": 36,
+      "category": "PRODUCT",
+      "name": "Decoration",
+      "i18n": "PRODUCT_CATEGORY.BEDROOM__DECORATION",
+      "slug": "product-bedroom-decoration",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 41,
+    "fields": {
+      "uid": "b1654a7c-f9c2-4f39-a650-d141a2a93256",
+      "created_at": "2023-04-03T15:50:27.028Z",
+      "updated_at": "2023-04-03T15:50:27.028Z",
+      "parent": 36,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.BEDROOM__OTHERS",
+      "slug": "product-bedroom-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 42,
+    "fields": {
+      "uid": "f3084500-d05b-41e4-be66-099d802b66f8",
+      "created_at": "2023-04-03T15:50:27.029Z",
+      "updated_at": "2023-04-03T15:56:38.110Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Child Furniture",
+      "i18n": "PRODUCT_CATEGORY.CHILD_FURNITURE",
+      "slug": "product-child-furniture",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 43,
+    "fields": {
+      "uid": "9e54305d-a7f4-4df0-9539-4515f6610b25",
+      "created_at": "2023-04-03T15:50:27.030Z",
+      "updated_at": "2023-04-03T15:50:27.030Z",
+      "parent": 42,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.CHILD_FURNITURE__OTHERS",
+      "slug": "product-child-furniture-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 44,
+    "fields": {
+      "uid": "f3a3bd63-2c08-4f22-aa78-8ee51d56d24d",
+      "created_at": "2023-04-03T15:50:27.030Z",
+      "updated_at": "2023-04-03T15:56:11.593Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Antique",
+      "i18n": "PRODUCT_CATEGORY.ANTIQUE",
+      "slug": "product-antique",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 45,
+    "fields": {
+      "uid": "374398fd-3bf0-4052-91ec-7466b650a8fb",
+      "created_at": "2023-04-03T15:50:27.031Z",
+      "updated_at": "2023-04-03T15:50:27.031Z",
+      "parent": 44,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.ANTIQUE__OTHERS",
+      "slug": "product-antique-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 46,
+    "fields": {
+      "uid": "b7435809-7641-49ee-b7d0-01bf83383459",
+      "created_at": "2023-04-03T15:50:27.032Z",
+      "updated_at": "2023-04-03T15:56:59.377Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Art",
+      "i18n": "PRODUCT_CATEGORY.ART",
+      "slug": "product-art",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 47,
+    "fields": {
+      "uid": "d6bf2a1a-a6f4-460d-8451-799b6a456901",
+      "created_at": "2023-04-03T15:50:27.032Z",
+      "updated_at": "2023-04-03T15:50:27.032Z",
+      "parent": 46,
+      "category": "PRODUCT",
+      "name": "Photo",
+      "i18n": "PRODUCT_CATEGORY.ART__PHOTO",
+      "slug": "product-art-photo",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 48,
+    "fields": {
+      "uid": "2468226c-2128-47b1-86de-11b19357b653",
+      "created_at": "2023-04-03T15:50:27.033Z",
+      "updated_at": "2023-04-03T15:50:27.033Z",
+      "parent": 46,
+      "category": "PRODUCT",
+      "name": "Oil & watercolor",
+      "i18n": "PRODUCT_CATEGORY.ART__OIL_AND_WATERCOLOR",
+      "slug": "product-art-oil-watercolor",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 49,
+    "fields": {
+      "uid": "b2ec6c38-8872-44dc-a316-e2c0c03da7f8",
+      "created_at": "2023-04-03T15:50:27.034Z",
+      "updated_at": "2023-04-03T15:50:27.034Z",
+      "parent": 46,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.ART__OTHERS",
+      "slug": "product-art-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 50,
+    "fields": {
+      "uid": "aaebf9b9-e9a3-45a0-bec3-87cebd4bfaf6",
+      "created_at": "2023-04-03T15:50:27.034Z",
+      "updated_at": "2023-04-03T15:58:53.744Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Outdoor",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR",
+      "slug": "product-outdoor",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 51,
+    "fields": {
+      "uid": "39667f68-74fb-4d89-9a1d-a51f61b231b2",
+      "created_at": "2023-04-03T15:50:27.035Z",
+      "updated_at": "2023-04-03T15:50:27.035Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Chair",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__CHAIR",
+      "slug": "product-outdoor-chair",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 52,
+    "fields": {
+      "uid": "72fa4c2f-f9f8-42cf-8d12-756f3e758e23",
+      "created_at": "2023-04-03T15:50:27.035Z",
+      "updated_at": "2023-04-03T15:50:27.035Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Armchair",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__ARMCHAIR",
+      "slug": "product-outdoor-armchair",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 53,
+    "fields": {
+      "uid": "348fb835-03bf-487d-9b73-a1c718695290",
+      "created_at": "2023-04-03T15:50:27.036Z",
+      "updated_at": "2023-04-03T15:50:27.036Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Benches & sofas",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__BENCHES_AND_SOFAS",
+      "slug": "product-outdoor-benches-sofas",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 54,
+    "fields": {
+      "uid": "640aa3d5-3ad1-46d1-a5cf-28e6b2e2a7ce",
+      "created_at": "2023-04-03T15:50:27.037Z",
+      "updated_at": "2023-04-03T15:50:27.037Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Barstools",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__BENCHES_AND_BARSTOOLS",
+      "slug": "product-outdoor-barstools",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 55,
+    "fields": {
+      "uid": "e8ca9354-951e-47fa-b820-98381e31e48f",
+      "created_at": "2023-04-03T15:50:27.037Z",
+      "updated_at": "2023-04-03T15:50:27.037Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Table",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__TABLE",
+      "slug": "product-outdoor-table",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 56,
+    "fields": {
+      "uid": "6c048b53-06d2-4f32-a3c8-a8ddd85ca954",
+      "created_at": "2023-04-03T15:50:27.038Z",
+      "updated_at": "2023-04-03T15:50:27.038Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Textile",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__TEXTILE",
+      "slug": "product-outdoor-textile",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 57,
+    "fields": {
+      "uid": "11e9f30c-ff52-4e62-badc-0ebe5600a57c",
+      "created_at": "2023-04-03T15:50:27.039Z",
+      "updated_at": "2023-04-03T15:50:27.039Z",
+      "parent": 50,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.OUTDOOR__OTHERS",
+      "slug": "product-outdoor-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 58,
+    "fields": {
+      "uid": "f586db7f-e2f9-4cf6-9689-5db2f653bace",
+      "created_at": "2023-04-03T15:50:27.039Z",
+      "updated_at": "2023-04-03T15:56:00.788Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Accessories",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES",
+      "slug": "product-accessories",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 59,
+    "fields": {
+      "uid": "430ddb2c-0738-405d-acce-0e9a5f81b4a4",
+      "created_at": "2023-04-03T15:50:27.040Z",
+      "updated_at": "2023-04-03T15:50:27.040Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Kitchen",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__KITCHEN",
+      "slug": "product-accessories-kitchen",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 60,
+    "fields": {
+      "uid": "6c44f395-ae6c-4c9f-82c4-6231ff52c6f2",
+      "created_at": "2023-04-03T15:50:27.041Z",
+      "updated_at": "2023-04-03T15:50:27.041Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Bathroom",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__BATHROOM",
+      "slug": "product-accessories-bathroom",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 61,
+    "fields": {
+      "uid": "fee4cb99-3e29-48b1-92d5-c5159c1735f9",
+      "created_at": "2023-04-03T15:50:27.042Z",
+      "updated_at": "2023-04-03T15:50:27.042Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Office",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__OFFICE",
+      "slug": "product-accessories-office",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 62,
+    "fields": {
+      "uid": "2730b794-decb-426a-9ebc-cf9ea8a77a6b",
+      "created_at": "2023-04-03T15:50:27.042Z",
+      "updated_at": "2023-04-03T15:50:27.042Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Decoration",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__DECORATION",
+      "slug": "product-accessories-decoration",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 63,
+    "fields": {
+      "uid": "d0819e74-bc17-437d-ab31-b137e4bc1c01",
+      "created_at": "2023-04-03T15:50:27.043Z",
+      "updated_at": "2023-04-03T15:50:27.043Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Mirror",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__MIRRORS",
+      "slug": "product-accessories-mirror",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 64,
+    "fields": {
+      "uid": "7d5a427a-1ec9-4807-b3bb-fb7812dd99af",
+      "created_at": "2023-04-03T15:50:27.044Z",
+      "updated_at": "2023-04-03T15:50:27.044Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Lifestyle",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__LIFESTYLE",
+      "slug": "product-accessories-lifestyle",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 65,
+    "fields": {
+      "uid": "62a23922-7b9e-45d9-84ce-58902080177c",
+      "created_at": "2023-04-03T15:50:27.044Z",
+      "updated_at": "2023-04-03T15:50:27.044Z",
+      "parent": 58,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.ACCESSORIES__OTHERS",
+      "slug": "product-accessories-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 66,
+    "fields": {
+      "uid": "34b82019-d3c2-45db-80db-d2aac197e0de",
+      "created_at": "2023-04-03T15:50:27.045Z",
+      "updated_at": "2023-04-03T15:58:30.119Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Acoustic",
+      "i18n": "PRODUCT_CATEGORY.ACOUSTIC",
+      "slug": "product-acoustic",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 67,
+    "fields": {
+      "uid": "277e9cc5-6488-42bd-a93f-e7ab1166b7dd",
+      "created_at": "2023-04-03T15:50:27.045Z",
+      "updated_at": "2023-04-03T15:50:27.045Z",
+      "parent": 66,
+      "category": "PRODUCT",
+      "name": "Ceiling",
+      "i18n": "PRODUCT_CATEGORY.ACOUSTIC__CEILING",
+      "slug": "product-acoustic-ceiling",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 68,
+    "fields": {
+      "uid": "a55cbe8c-b4ca-43cc-9b2d-e64aaa5b06ec",
+      "created_at": "2023-04-03T15:50:27.046Z",
+      "updated_at": "2023-04-03T15:50:27.046Z",
+      "parent": 66,
+      "category": "PRODUCT",
+      "name": "Wall",
+      "i18n": "PRODUCT_CATEGORY.ACOUSTIC__WALL",
+      "slug": "product-acoustic-wall",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 69,
+    "fields": {
+      "uid": "7255ee80-d77c-4183-aa19-d82fdfbd24e0",
+      "created_at": "2023-04-03T15:50:27.046Z",
+      "updated_at": "2023-04-03T15:50:27.046Z",
+      "parent": 66,
+      "category": "PRODUCT",
+      "name": "Pendent",
+      "i18n": "PRODUCT_CATEGORY.ACOUSTIC__PENDENT",
+      "slug": "product-acoustic-pendent",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 70,
+    "fields": {
+      "uid": "1d4abf8d-2b23-4727-8eaa-0e08dc683e46",
+      "created_at": "2023-04-03T15:50:27.047Z",
+      "updated_at": "2023-04-03T15:50:27.047Z",
+      "parent": 66,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.ACOUSTIC__OTHERS",
+      "slug": "product-acoustic-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 71,
+    "fields": {
+      "uid": "4a2bee7d-9f6e-4f2d-82c6-dc0bc094ad43",
+      "created_at": "2023-04-03T15:50:27.048Z",
+      "updated_at": "2023-04-03T15:58:38.472Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Textile",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE",
+      "slug": "product-textile",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 72,
+    "fields": {
+      "uid": "9a8b0964-e5fb-4de3-8f12-1d05bf1bbdb9",
+      "created_at": "2023-04-03T15:50:27.049Z",
+      "updated_at": "2023-04-03T15:50:27.049Z",
+      "parent": 71,
+      "category": "PRODUCT",
+      "name": "Curtains",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE__CURTAINS",
+      "slug": "product-textile-curtains",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 73,
+    "fields": {
+      "uid": "bd7005e6-e5e8-448a-b4cc-ffe8495f103c",
+      "created_at": "2023-04-03T15:50:27.050Z",
+      "updated_at": "2023-04-03T15:50:27.050Z",
+      "parent": 71,
+      "category": "PRODUCT",
+      "name": "Throws & Blankets",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE__THROWS_AND_BLANKETS",
+      "slug": "product-textile-throws-blankets",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 74,
+    "fields": {
+      "uid": "233c1132-4df8-43b6-81fd-363d6fbbe167",
+      "created_at": "2023-04-03T15:50:27.050Z",
+      "updated_at": "2023-04-03T15:50:27.050Z",
+      "parent": 71,
+      "category": "PRODUCT",
+      "name": "Pillows",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE__PILLOWS",
+      "slug": "product-textile-pillows",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 75,
+    "fields": {
+      "uid": "0eaa02d3-2738-468d-86a4-ab862ae0cbbf",
+      "created_at": "2023-04-03T15:50:27.051Z",
+      "updated_at": "2023-04-03T15:50:27.051Z",
+      "parent": 71,
+      "category": "PRODUCT",
+      "name": "Carpenting",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE__CARPENTING",
+      "slug": "product-textile-carpenting",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 76,
+    "fields": {
+      "uid": "2f89c364-cf0f-4946-858a-5b945fbb74a7",
+      "created_at": "2023-04-03T15:50:27.052Z",
+      "updated_at": "2023-04-03T15:50:27.052Z",
+      "parent": 71,
+      "category": "PRODUCT",
+      "name": "Fitted Carpet",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE__FITTED_CARPET",
+      "slug": "product-textile-fitted-carpet",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 77,
+    "fields": {
+      "uid": "c6eedc4e-8530-4e3b-80d3-205f678b4bf7",
+      "created_at": "2023-04-03T15:50:27.052Z",
+      "updated_at": "2023-04-03T15:50:27.052Z",
+      "parent": 71,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.TEXTILE__OTHERS",
+      "slug": "product-textile-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 78,
+    "fields": {
+      "uid": "f44ae028-de0e-4d9f-b05a-63f27bf2d4f0",
+      "created_at": "2023-04-03T15:50:27.053Z",
+      "updated_at": "2023-04-03T15:58:10.461Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Kitchen",
+      "i18n": "PRODUCT_CATEGORY.KITCHEN",
+      "slug": "product-kitchen",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 79,
+    "fields": {
+      "uid": "7fb6a406-c124-4e42-8199-bf0519701125",
+      "created_at": "2023-04-03T15:50:27.054Z",
+      "updated_at": "2023-04-03T15:50:27.054Z",
+      "parent": 78,
+      "category": "PRODUCT",
+      "name": "Accessories",
+      "i18n": "PRODUCT_CATEGORY.KITCHEN__ACCESSORIES",
+      "slug": "product-kitchen-accessories",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 80,
+    "fields": {
+      "uid": "9e02aab5-3845-401e-a330-ad53c9546bfc",
+      "created_at": "2023-04-03T15:50:27.055Z",
+      "updated_at": "2023-04-03T15:50:27.055Z",
+      "parent": 78,
+      "category": "PRODUCT",
+      "name": "Porcelain",
+      "i18n": "PRODUCT_CATEGORY.KITCHEN__PORCELAIN",
+      "slug": "product-kitchen-porcelain",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 81,
+    "fields": {
+      "uid": "b2d0d647-9606-4d96-a30b-5396316b1b4e",
+      "created_at": "2023-04-03T15:50:27.055Z",
+      "updated_at": "2023-04-03T15:50:27.055Z",
+      "parent": 78,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.KITCHEN__OTHERS",
+      "slug": "product-kitchen-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 82,
+    "fields": {
+      "uid": "f0e8db6a-e998-4495-aee3-89aea751ab7f",
+      "created_at": "2023-04-03T15:50:27.056Z",
+      "updated_at": "2023-04-03T15:57:10.980Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Fittings",
+      "i18n": "PRODUCT_CATEGORY.FITTINGS",
+      "slug": "product-fittings",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 83,
+    "fields": {
+      "uid": "425810d6-d031-4f63-9475-3377039094fc",
+      "created_at": "2023-04-03T15:50:27.057Z",
+      "updated_at": "2023-04-03T15:50:27.057Z",
+      "parent": 82,
+      "category": "PRODUCT",
+      "name": "Handle",
+      "i18n": "PRODUCT_CATEGORY.FITTINGS__HANDLE",
+      "slug": "product-fittings-handle",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 84,
+    "fields": {
+      "uid": "db8de061-7a1d-4caf-aa08-0028bdce189c",
+      "created_at": "2023-04-03T15:50:27.058Z",
+      "updated_at": "2023-04-03T15:50:27.058Z",
+      "parent": 82,
+      "category": "PRODUCT",
+      "name": "Buds",
+      "i18n": "PRODUCT_CATEGORY.FITTINGS__BUDS",
+      "slug": "product-fittings-buds",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 85,
+    "fields": {
+      "uid": "07a50097-0039-4450-a501-d04482927ccd",
+      "created_at": "2023-04-03T15:50:27.059Z",
+      "updated_at": "2023-04-03T15:50:27.059Z",
+      "parent": 82,
+      "category": "PRODUCT",
+      "name": "Hooks",
+      "i18n": "PRODUCT_CATEGORY.FITTINGS__HOOKS",
+      "slug": "product-fittings-hooks",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 86,
+    "fields": {
+      "uid": "bea95cc0-b464-45cf-9b0c-3ce345f56f4b",
+      "created_at": "2023-04-03T15:50:27.060Z",
+      "updated_at": "2023-04-03T15:50:27.060Z",
+      "parent": 82,
+      "category": "PRODUCT",
+      "name": "Table & Supportlegs",
+      "i18n": "PRODUCT_CATEGORY.FITTINGS__TABLE_AND_SUPPORTLEGS",
+      "slug": "product-fittings-table-supportlegs",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 87,
+    "fields": {
+      "uid": "c8217675-c6be-4796-9912-64659c6fce25",
+      "created_at": "2023-04-03T15:50:27.061Z",
+      "updated_at": "2023-04-03T15:50:27.061Z",
+      "parent": 82,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.FITTINGS__OTHERS",
+      "slug": "product-fittings-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 88,
+    "fields": {
+      "uid": "565456cd-abb2-45c0-9a56-50f630393aae",
+      "created_at": "2023-04-03T15:50:27.061Z",
+      "updated_at": "2023-04-03T15:57:43.152Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Appliances",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES",
+      "slug": "product-appliances",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 89,
+    "fields": {
+      "uid": "73ab141d-d554-4019-9966-606d74749836",
+      "created_at": "2023-04-03T15:50:27.062Z",
+      "updated_at": "2023-04-03T15:50:27.062Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Dishwasher",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__DISHWASHER",
+      "slug": "product-appliances-dishwasher",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 90,
+    "fields": {
+      "uid": "17084fc2-44af-42e5-ad50-ec68bfe91c08",
+      "created_at": "2023-04-03T15:50:27.063Z",
+      "updated_at": "2023-04-03T15:50:27.063Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Fridge & Freezer",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__FRIDGE_AND_FREEZER",
+      "slug": "product-appliances-fridge-freezer",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 91,
+    "fields": {
+      "uid": "34bdc2b2-e5e3-4057-8d63-b4bdb4ebe3a1",
+      "created_at": "2023-04-03T15:50:27.063Z",
+      "updated_at": "2023-04-03T15:50:27.063Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Washing Machine",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__WASHING_MACHINE",
+      "slug": "product-appliances-washing-machine",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 92,
+    "fields": {
+      "uid": "771a48b4-65b4-4255-b04a-9552cc2e2f64",
+      "created_at": "2023-04-03T15:50:27.064Z",
+      "updated_at": "2023-04-03T15:50:27.064Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Tumble Dryer",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__TUMBLE_DRYER",
+      "slug": "product-appliances-tumble-dryer",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 93,
+    "fields": {
+      "uid": "c19ba43d-8782-45c3-98c7-293c5f72e31c",
+      "created_at": "2023-04-03T15:50:27.065Z",
+      "updated_at": "2023-04-03T15:50:27.065Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Stoves",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__STOVES",
+      "slug": "product-appliances-stoves",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 94,
+    "fields": {
+      "uid": "9c8eec9a-8170-49e1-a8e4-db3c19c5cc42",
+      "created_at": "2023-04-03T15:50:27.065Z",
+      "updated_at": "2023-04-03T15:50:27.065Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Microwaves",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__MICROWAVES",
+      "slug": "product-appliances-microwaves",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 95,
+    "fields": {
+      "uid": "cc707c45-ff1e-4d87-9e20-392f4400811d",
+      "created_at": "2023-04-03T15:50:27.066Z",
+      "updated_at": "2023-04-03T15:50:27.066Z",
+      "parent": 88,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.APPLIANCES__OTHERS",
+      "slug": "product-appliances-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 96,
+    "fields": {
+      "uid": "b5e4c2af-d652-47ca-a572-442ce68ba51a",
+      "created_at": "2023-04-03T15:50:27.067Z",
+      "updated_at": "2023-04-03T15:56:29.503Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Bathroom & WC",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM",
+      "slug": "product-bathroom-wc",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 97,
+    "fields": {
+      "uid": "b1959444-d338-4104-9c2c-d4af6f5f2596",
+      "created_at": "2023-04-03T15:50:27.067Z",
+      "updated_at": "2023-04-03T15:50:27.067Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Porcelain",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__PORCELAIN",
+      "slug": "product-bathroom-wc-porcelain",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 98,
+    "fields": {
+      "uid": "1d0d40a3-c69d-4f06-8197-1ae4dbe3592f",
+      "created_at": "2023-04-03T15:50:27.068Z",
+      "updated_at": "2023-04-03T15:50:27.068Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Storage",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__STORAGE",
+      "slug": "product-bathroom-wc-storage",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 99,
+    "fields": {
+      "uid": "516f4f5a-7667-4fe9-9cf0-cdf0ce45e44e",
+      "created_at": "2023-04-03T15:50:27.069Z",
+      "updated_at": "2023-04-03T15:50:27.069Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Mirrors",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__MIRRORS",
+      "slug": "product-bathroom-wc-mirrors",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 100,
+    "fields": {
+      "uid": "ed37d356-4b1b-4304-90ce-c817822b5ae6",
+      "created_at": "2023-04-03T15:50:27.070Z",
+      "updated_at": "2023-04-03T15:50:27.070Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Shower & Taps",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__SHOWER_AND_TAPS",
+      "slug": "product-bathroom-wc-shower-taps",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 101,
+    "fields": {
+      "uid": "9cf631d5-3d4a-4496-b426-0119f12395f2",
+      "created_at": "2023-04-03T15:50:27.070Z",
+      "updated_at": "2023-04-03T15:50:27.070Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Shower Walls",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__SHOWER_WALLS",
+      "slug": "product-bathroom-wc-shower-walls",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 102,
+    "fields": {
+      "uid": "8dd7c0e9-7a1b-4c23-bed5-dcabd1e940ea",
+      "created_at": "2023-04-03T15:50:27.071Z",
+      "updated_at": "2023-04-03T15:50:27.071Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Tiles & Clinkers",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__TILES_AND_CLINKERS",
+      "slug": "product-bathroom-wc-tiles-clinkers",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 103,
+    "fields": {
+      "uid": "dc57e99e-aed4-4b0c-bccf-4be34477aaa4",
+      "created_at": "2023-04-03T15:50:27.072Z",
+      "updated_at": "2023-04-03T15:50:27.072Z",
+      "parent": 96,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.BATHROOM__OTHERS",
+      "slug": "product-bathroom-wc-others",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 104,
+    "fields": {
+      "uid": "bdf7d4e7-cc86-4687-8d35-90e75acf9dcc",
+      "created_at": "2023-04-03T15:50:27.072Z",
+      "updated_at": "2023-04-03T15:58:46.930Z",
+      "parent": null,
+      "category": "PRODUCT",
+      "name": "Technology & Electrical Equipment",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY",
+      "slug": "product-technology-electrical-equipment",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 105,
+    "fields": {
+      "uid": "a12994aa-8d68-40dc-a9fa-ff0adeaeb0e6",
+      "created_at": "2023-04-03T15:50:27.073Z",
+      "updated_at": "2023-04-03T15:50:27.073Z",
+      "parent": 104,
+      "category": "PRODUCT",
+      "name": "Sound",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY__SOUND",
+      "slug": "product-technology-electrical-equipment-sound",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 106,
+    "fields": {
+      "uid": "01f1c3a5-8053-45af-9294-bf8bcaf1b30d",
+      "created_at": "2023-04-03T15:50:27.073Z",
+      "updated_at": "2023-04-03T15:50:27.074Z",
+      "parent": 104,
+      "category": "PRODUCT",
+      "name": "TV",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY__TV",
+      "slug": "product-technology-electrical-equipment-tv",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 107,
+    "fields": {
+      "uid": "e44b70de-a0cb-4d29-9ead-8a8b6475c59a",
+      "created_at": "2023-04-03T15:50:27.074Z",
+      "updated_at": "2023-04-03T15:50:27.074Z",
+      "parent": 104,
+      "category": "PRODUCT",
+      "name": "Electrical Equipment",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY__ELECTRICAL_EQUIPMENT",
+      "slug": "product-technology-electrical-equipment-electrical",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 108,
+    "fields": {
+      "uid": "01cfb374-a9d3-447c-b96c-5f3b0d334562",
+      "created_at": "2023-04-03T15:50:27.075Z",
+      "updated_at": "2023-04-03T15:50:27.075Z",
+      "parent": 104,
+      "category": "PRODUCT",
+      "name": "Alarm",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY__ALARM",
+      "slug": "product-technology-electrical-equipment-alarm",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 109,
+    "fields": {
+      "uid": "9bb8c5a4-987a-427d-8876-0ae4154533e1",
+      "created_at": "2023-04-03T15:50:27.075Z",
+      "updated_at": "2023-04-03T15:50:27.075Z",
+      "parent": 104,
+      "category": "PRODUCT",
+      "name": "Data",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY__DATA",
+      "slug": "product-technology-electrical-equipment-data",
+      "status": "ACTIVE"
+    }
+  },
+  {
+    "model": "tagio.tag",
+    "pk": 110,
+    "fields": {
+      "uid": "ad365133-a87b-40b8-a7a1-fee326736116",
+      "created_at": "2023-04-03T15:50:27.076Z",
+      "updated_at": "2023-04-03T15:50:27.076Z",
+      "parent": 104,
+      "category": "PRODUCT",
+      "name": "Others",
+      "i18n": "PRODUCT_CATEGORY.TECHNOLOGY__OTHERS",
+      "slug": "product-technology-electrical-equipment-others",
+      "status": "ACTIVE"
+    }
+  }
+]

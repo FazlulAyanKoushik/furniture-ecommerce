@@ -1,0 +1,6248 @@
+{
+	"info": {
+		"_postman_id": "5d337657-c301-400f-99ea-c9eadb11ec10",
+		"name": "Supplers Api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15819940"
+	},
+	"item": [
+		{
+			"name": "WeApi",
+			"item": [
+				{
+					"name": "partners create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"checkabc\",\n  \"display_name\": \"checkcheck\",\n  \"registration_no\": \"fffffgsfgfff\",\n  \"country\": \"ae\",\n  \"email\": \"org.afd@example.com\",\n  \"message\": \"Welcome to our organizations\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/partners",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"partners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "we retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "we update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"display_name\": \"string\",\n  \"email\": \"user@example.com\",\n  \"registration_no\": \"safas\",\n  \"address\": \"string\",\n  \"postal_code\": \"string\",\n  \"postal_area\": \"string\",\n  \"city\": \"string\",\n  \"country\": \"af\",\n  \"website_url\": \"http://example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductBrand create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"string\",\n    \"description\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/brands",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProdutBrand list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        BrandUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        BrandUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"BrandUID\", BrandUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/brands",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"brands"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProdutBrand retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 500\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,500])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/brands/{{BrandUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"brands",
+								"{{BrandUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductBrand Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"title\": \"update title with abc\",\n    \"description\": \"update description\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/brands/{{BrandUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"brands",
+								"{{BrandUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductCollection create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"",
+									"if (jsonData) {",
+									"    CollectionUID = jsonData.uid;",
+									"} else {",
+									"    // Set a default value ",
+									"    CollectionUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"}",
+									"console.log(\"uid:\", CollectionUID)",
+									"pm.collectionVariables.set(\"CollectionUID\", CollectionUID);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"string\",\n  \"kind\": \"COLLECTION\",\n  \"visibility\": \"PRIVATE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/collections",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductCollection list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/collections/{{CollectionUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"collections",
+								"{{CollectionUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductCollection Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/collections/{{CollectionUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"collections",
+								"{{CollectionUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductCollection update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"update collection title\",\n  \"kind\": \"COLLECTION\",\n  \"visibility\": \"PUBLIC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/collections/{{CollectionUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"collections",
+								"{{CollectionUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dashboard",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/dashboard",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Files Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"updated files name\",\n    \"description\": \"update description via postman\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/files/{{FileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"files",
+								"{{FileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"abcde\",\n  \"description\": \"string\",\n  \"kind\": \"PUBLIC\",\n  \"status\": \"ACTIVE\",\n  \"country\": \"af\",\n  \"faq\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        GroupUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        GroupUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"GroupUID\", GroupUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Update",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"updated group name\",\n  \"description\": \"string\",\n  \"kind\": \"PUBLIC\",\n  \"country\": \"ae\",\n  \"faq\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Member List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        MemberUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        MemberUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"MemberUID\", MemberUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/members",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Member Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user\": \"teste-testlaste-4ba47b4c\",\n    \"role\": \"SPECTATOR\",\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/members",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Member Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/members/{{MemberUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"members",
+								"{{MemberUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Member Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"user\": \"teste-testlaste-4ba47b4c\",\n  \"role\": \"SPECTATOR\",\n  \"status\": \"USER_ACCEPTED\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/members/{{MemberUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"members",
+								"{{MemberUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Member Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/members/{{MemberUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"members",
+								"{{MemberUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group File Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "string",
+									"type": "text"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "SECRET",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "DRAFT",
+									"type": "text"
+								},
+								{
+									"key": "fileitem",
+									"type": "file",
+									"src": "/home/bappi/Downloads/flower.jpg"
+								},
+								{
+									"key": "extension",
+									"value": "IMAGE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group File List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        GroupFileUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        GroupFileUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"GroupFileUID\", GroupFileUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group File Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/files/{{GroupFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"files",
+								"{{GroupFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Image Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/bappi/Downloads/flower.jpg"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								},
+								{
+									"key": "width",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "20",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Image List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        GroupImageUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        GroupImageUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"GroupImageUID\", GroupImageUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Image Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/images/{{GroupImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"images",
+								"{{GroupImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Image Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"width\": 0,\n  \"height\": 0,\n  \"caption\": \"string\",\n  \"copyright\": \"string\",\n  \"priority\": 0,\n  \"kind\": \"IMAGE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/images/{{GroupImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"images",
+								"{{GroupImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"",
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"string\",\n  \"kind\": \"EVENT\",\n  \"status\": \"DRAFT\",\n  \"is_featured\": true\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/news",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        NewsUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        NewsUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"NewsUID\", NewsUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"up title\",\n  \"kind\": \"EVENT\",\n  \"status\": \"DRAFT\",\n  \"is_featured\": false\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News File Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileitem",
+									"type": "file",
+									"src": "/home/bappi/Downloads/Assessment results.xlsx"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								},
+								{
+									"key": "extension",
+									"value": "EXCEL",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "SECRET",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "DRAFT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News File List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        NewsFileUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        NewsFileUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"NewsFileUID\", NewsFileUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News File Retrieve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/files/{{NewsFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"files",
+								"{{NewsFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Image Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/bappi/Downloads/flower.jpg"
+								},
+								{
+									"key": "width",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "200",
+									"type": "text"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Image List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        NewsImageUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        NewsImageUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"NewsImageUID\", NewsImageUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Image Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/images/{{NewsImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"images",
+								"{{NewsImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Image Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"caption\": \"string\",\n  \"copyright\": \"string\",\n  \"kind\": \"IMAGE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/images/{{NewsImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"images",
+								"{{NewsImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Files List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        FileUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        FileUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"FileUID\", FileUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Files retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/files/{{FileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"files",
+								"{{FileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image LIst",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        ImageUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ImageUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ImageUID\", ImageUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"caption\": \"new caption\" \n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/images/{{ImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"images",
+								"{{ImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partners Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"string\",\n  \"display_name\": \"string\",\n  \"registration_number\": \"regNumber\",\n  \"postal_area\": \"string\",\n  \"city\": \"string\",\n  \"country\": \"ae\",\n  \"summary\": \"string\",\n  \"description\": \"string\",\n  \"status\": \"DRAFT\",\n  \"kind\": \"UNKNOWN\",\n  \"email\": \"users@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/partners",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"partners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partners List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        PartnerUID = results[0].token;",
+									"    } else {",
+									"        // Set a default value ",
+									"        PartnerUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"PartnerUID\", PartnerUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/partners",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"partners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partners Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/partners/{{PartnerUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"partners",
+								"{{PartnerUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"string\",\n  \"display_title\": \"string\",\n  \"description\": \"string\",\n  \"seo_title\": \"string\",\n  \"seo_description\": \"string\",\n  \"categories\": {},\n  \"color\": \"string\",\n  \"material\": \"string\",\n  \"sku\": \"string\",\n  \"status\": \"DRAFT\",\n  \"published_at\": \"2019-08-24T14:15:22Z\",\n  \"like_count\": 0,\n  \"view_count\": 0\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/products",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Products List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        ProductUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ProductUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProductUID\", ProductUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"new title\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product File Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileitem",
+									"type": "file",
+									"src": "/home/bappi/Downloads/Assessment results.xlsx"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								},
+								{
+									"key": "extension",
+									"value": "EXCEL",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "SECRET",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "DRAFT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Files List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        ProductFileUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ProductFileUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProductFileUID\", ProductFileUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product File Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/files/{{ProductFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"files",
+								"{{ProductFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product File Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"string\",\n  \"kind\": \"IMAGE\",\n  \"extension\": \"EXCEL\",\n  \"visibility\": \"SECRET\",\n  \"status\": \"DRAFT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/files/{{ProductFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"files",
+								"{{ProductFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Image create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/bappi/Downloads/flower.jpg"
+								},
+								{
+									"key": "width",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "20",
+									"type": "text"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Image List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        ProductImageUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ProductImageUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProductImageUID\", ProductImageUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Image Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/images/{{ProductImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"images",
+								"{{ProductImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"project title\",\n  \"status\": \"DRAFT\",\n  \"visibility\": \"SECRET\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"console.log(jsonData)",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    var projectUId = jsonData['results'][0].uid;",
+									"    console.log(projectUId)",
+									"",
+									"    pm.collectionVariables.set(\"projectUId\", projectUId);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Update Title\",\n  \"status\": \"ACTIVE\",\n  \"visibility\": \"SECRET\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Participants Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "role",
+									"value": "abc",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "ACTIVE",
+									"type": "text"
+								},
+								{
+									"key": "user_uid",
+									"value": "527cb12a-7e5b-45fa-a915-1cda78e2be2a",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/participants",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"participants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Participants List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        ProjectParticipantUID= results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ProjectParticipantUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProjectParticipantUID\", ProjectParticipantUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/participants",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"participants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Participant Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/participants/{{ProjectParticipantUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"participants",
+								"{{ProjectParticipantUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Participant Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"role\": \"Painter\",\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/participants/{{ProjectParticipantUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"participants",
+								"{{ProjectParticipantUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project File Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "fileitem",
+									"type": "file",
+									"src": "/home/bappi/Downloads/Assessment results.xlsx"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								},
+								{
+									"key": "extension",
+									"value": "EXCEL",
+									"type": "text"
+								},
+								{
+									"key": "visibility",
+									"value": "SECRET",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "DRAFT",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Files List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        ProjectFileUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ProjectFileUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProjectFileUID\", ProjectFileUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project File Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/files/{{ProjectFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"files",
+								"{{ProjectFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project File Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"visibility\": \"SECRET\",\n  \"status\": \"PUBLISHED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/files/{{ProjectFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"files",
+								"{{ProjectFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Image Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 202]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/home/bappi/Downloads/flower.jpg"
+								},
+								{
+									"key": "width",
+									"value": "252",
+									"type": "text"
+								},
+								{
+									"key": "height",
+									"value": "252",
+									"type": "text"
+								},
+								{
+									"key": "kind",
+									"value": "IMAGE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Image List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        ProjectImageUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        ProjectImageUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProjectImageUID\", ProjectImageUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Image Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/images/{{ProjectImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"images",
+								"{{ProjectImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Image Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"caption\": \"updated caption\",\n  \"copyright\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/images/{{ProjectImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"images",
+								"{{ProjectImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Search Partners",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/search/partners",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"search",
+								"partners"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Organization User Create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"user@example.com\",\n    \"first_name\": \"string\",\n    \"last_name\": \"string\",\n    \"role\": \"INITIATOR\",\n    \"status\": \"INVITED\",\n    \"password\": \"hello123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/users",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Users List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        OrganizationUserUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value ",
+									"        OrganizationUserUID = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+									"    }",
+									"    pm.collectionVariables.set(\"OrganizationUserUID\", OrganizationUserUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/users",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invite Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/invites/{{InvitationToken}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"invites",
+								"{{InvitationToken}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Invite Patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"response\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/invites/{{InvitationToken}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"invites",
+								"{{InvitationToken}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Organization User Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/users/{{OrganizationUserUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"users",
+								"{{OrganizationUserUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/images/{{ImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"images",
+								"{{ImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Organization User Update(Patch)",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/users/{{OrganizationUserUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"users",
+								"{{OrganizationUserUID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Organizations",
+			"item": [
+				{
+					"name": "onboarding organization create",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 400]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Bearer_Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "abobashar.bappi@repliq.dev",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "repliq.dev",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "01768669798",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "ab",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "bappi",
+									"type": "text"
+								},
+								{
+									"key": "organization_name",
+									"value": "repliq",
+									"type": "text"
+								},
+								{
+									"key": "organization_no",
+									"value": "1554321",
+									"type": "text"
+								},
+								{
+									"key": "country",
+									"value": "bd",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/organizations/onboarding",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"onboarding"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "we organization user invite",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 500]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Bearer_Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "abc@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "first_name",
+									"value": "last",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "test",
+									"type": "text"
+								},
+								{
+									"key": "role",
+									"value": "STAFF",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "onboarding",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/we/users",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"we",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        OrganizationSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value",
+									"        OrganizationSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"OrganizationSlug\", OrganizationSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization products list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"    productSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value ",
+									"        productSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"productSlug\", productSlug);",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/products",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization products image list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404]);    ",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        productImageSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value for projectSlug",
+									"        productImageSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"productImageSlug\", productImageSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/products/{{productSlug}}/images",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"products",
+								"{{productSlug}}",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve organizations product",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/products/{{productSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"products",
+								"{{productSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations project list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"    if (results.length > 0) {",
+									"        ProjectSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value",
+									"        ProjectSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"ProjectSlug\", ProjectSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/projects",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations project retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/projects/{{projectSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"projects",
+								"{{projectSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations user list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        UserSlug = results[0].user.slug;",
+									"    } else {",
+									"        // Set a default value",
+									"        UserSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"UserSlug\", UserSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/users",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations user retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/users/{{UserSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"users",
+								"{{UserSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization news list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        NewsSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value",
+									"        NewsSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"NewsSlug\", NewsSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/news",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"news"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve organization news ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/news/{{NewsSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"news",
+								"{{NewsSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization files",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        FileUID = results[0].uid;",
+									"    } else {",
+									"        // Set a default value",
+									"        FileUID = \"652e0db0-e14f-4b5b-82a4-51efaed7a8da\";",
+									"    }",
+									"    pm.collectionVariables.set(\"FileUID\", FileUID);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/files",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"files"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve organization files",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/files/{{FileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"files",
+								"{{FileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations group list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"        ",
+									"    if (results.length > 0) {",
+									"        GroupSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value",
+									"        GroupSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"GroupSlug\", GroupSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/groups",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "retrieve organizations group",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404]) ",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/organizations/{{OrganizationSlug}}/groups/{{GroupSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"organizations",
+								"{{OrganizationSlug}}",
+								"groups",
+								"{{GroupSlug}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Me",
+			"item": [
+				{
+					"name": "me details get request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/me",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organizations list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (results.length > 0) {",
+									"    OrganizationUID = results[0].uid;",
+									"} else {",
+									"    // Set a default value",
+									"    OrganizationUID = \"my-default-slug\";",
+									"}",
+									"pm.collectionVariables.set(\"OrganizationUID\", OrganizationUID);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/me/organizations",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me",
+								"organizations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "MeEmail List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (results.length > 0) {",
+									"    EmailUID = results[0].uid;",
+									"} else {",
+									"    // Set a default value",
+									"    EmailUID = \"652e0db0-e14f-4b5b-82a4-51efaed7a8da\";",
+									"}",
+									"pm.collectionVariables.set(\"EmailUID\", EmailUID);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/me/emails",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"me",
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "emails post",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201,400]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hello@example.com\",\n    \"is_primary\": false,\n    \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/me/emails",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"me",
+								"emails"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "emails update ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+									"  });",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"abc@gmail.com\",\n  \"is_primary\": true,\n  \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/me/emails/{{EmailUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me",
+								"emails",
+								"{{EmailUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Retrive email",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/me/emails/{{EmailUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me",
+								"emails",
+								"{{EmailUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "email patch request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{Bearer_Token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"abfd@gmail.com\",\n  \"is_primary\": false,\n  \"status\": \"PENDING\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/v1/me/emails/75cf8ff5-903b-4579-b19f-8afd80e50559",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"me",
+								"emails",
+								"75cf8ff5-903b-4579-b19f-8afd80e50559"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "organization select patch",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"ACTIVE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/me/organizations/{{OrganizationUID}}/select",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me",
+								"organizations",
+								"{{OrganizationUID}}",
+								"select"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\": \"admintest\",\n    \"password\": \"superadmin\",\n    \"confirm_password\": \"superadmin\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/me/password",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me",
+								"password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "me status",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"old_password\": \"superadmin\",\n  \"password\": \"admintest\",\n  \"confirm_password\": \"admintest\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/me/status",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me",
+								"status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Me Update",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "gender",
+									"value": "MALE",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base_url}}/me",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Product List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        PubProductSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value ",
+									"        PubProductSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"PubProductSlug\", PubProductSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/products",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/products/{{PubProductSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"products",
+								"{{PubProductSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products collections list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"        ",
+									"    if (results.length > 0) {",
+									"        CollectionSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value ",
+									"        CollectionSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"CollectionSlug\", CollectionSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/products/collections",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"products",
+								"collections"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "products collections-collection products",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/products/collections/collection/{{CollectionSlug}}/products",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"products",
+								"collections",
+								"collection",
+								"{{CollectionSlug}}",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "product collections retrieve",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/products/collections/{{CollectionSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"products",
+								"collections",
+								"{{CollectionSlug}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Projects",
+			"item": [
+				{
+					"name": "project list",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"        ",
+									"    if (results.length > 0) {",
+									"        projectSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value for projectSlug",
+									"        projectSlug = \"my-default-slug\";",
+									"    }",
+									"    pm.collectionVariables.set(\"projectSlug\", projectSlug);",
+									"",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/projects",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"projects"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "project retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/projects/{{projectSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"projects",
+								"{{projectSlug}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Public",
+			"item": [
+				{
+					"name": "public password reset",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"hello@example.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/public/password-reset",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"public",
+								"password-reset"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "public password reset confirm ",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"password\": \"admintest\",\n    \"token\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/public/password-rest-confirm",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"public",
+								"password-rest-confirm"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password reset token validate",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([201, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"string\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/public/password-rest-validate-token",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"public",
+								"password-rest-validate-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "search product list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/search/products?title=furniture&status=PU",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"search",
+								"products"
+							],
+							"query": [
+								{
+									"key": "title",
+									"value": "furniture"
+								},
+								{
+									"key": "status",
+									"value": "PU"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "search organizations list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/search/organizations?name =repli&registration_no=1554",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"search",
+								"organizations"
+							],
+							"query": [
+								{
+									"key": "name ",
+									"value": "repli"
+								},
+								{
+									"key": "registration_no",
+									"value": "1554"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Groups",
+			"item": [
+				{
+					"name": "Group List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        GroupSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value ",
+									"        GroupSlug = \"abcdefgh\";",
+									"    }",
+									"    pm.collectionVariables.set(\"GroupSlug\", GroupSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/groups",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"groups"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Public Group Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/groups/{{GroupSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"groups",
+								"{{GroupSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Public Group Members List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var jsonData = pm.response.json();",
+									"var results = jsonData['results'];",
+									"",
+									"if (jsonData['detail'] != \"Not found.\"){",
+									"",
+									"    if (results.length > 0) {",
+									"        GroupMemberSlug = results[0].slug;",
+									"    } else {",
+									"        // Set a default value ",
+									"        GroupMemberSlug = \"abcdef\";",
+									"    }",
+									"    pm.collectionVariables.set(\"GroupMemberSlug\", GroupMemberSlug);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/groups/{{GroupUID}}/members",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"groups",
+								"{{GroupUID}}",
+								"members"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Public Group Member Retrieve",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200,404])",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/groups/{{GroupUID}}/members/{{GroupMemberSlug}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"groups",
+								"{{GroupUID}}",
+								"members",
+								"{{GroupMemberSlug}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Group List",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/groups/{{GroupSlug}}/admins",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"groups",
+								"{{GroupSlug}}",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Admin Group Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"group\": 1,\n  \"user\": 4,\n  \"role\": \"ADMIN\",\n  \"status\": \"PENDING\",\n  \"referrer\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/groups/{{GroupSlug}}/admins",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"groups",
+								"{{GroupSlug}}",
+								"admins"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		},
+		{
+			"name": "Delete Urls call",
+			"item": [
+				{
+					"name": "Project Image Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/images/{{ProjectImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"images",
+								"{{ProjectImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductBrand Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/brands/{{BrandUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"brands",
+								"{{BrandUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project File Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/files/{{ProjectFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"files",
+								"{{ProjectFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Participant Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}/participants/{{ProjectParticipantUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}",
+								"participants",
+								"{{ProjectParticipantUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Project Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/projects/{{projectUId}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"projects",
+								"{{projectUId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product File Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/files/{{ProductFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"files",
+								"{{ProductFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Image Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}/images/{{ProductImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}",
+								"images",
+								"{{ProductImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Image Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/images/{{GroupImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"images",
+								"{{GroupImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group File Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}/files/{{GroupFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}",
+								"files",
+								"{{GroupFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News File Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/files/{{NewsFileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"files",
+								"{{NewsFileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Image Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}/images/{{NewsImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}",
+								"images",
+								"{{NewsImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Partners Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/partners/{{PartnerUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"partners",
+								"{{PartnerUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ProductCollection Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/collections/{{CollectionUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"collections",
+								"{{CollectionUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Group Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/groups/{{GroupUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"groups",
+								"{{GroupUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Files Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/files/{{FileUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"files",
+								"{{FileUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "News Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/news/{{NewsUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"news",
+								"{{NewsUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Image Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/images/{{ImageUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"images",
+								"{{ImageUID}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Product Delete",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 204 or 404\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([204, 404]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{Base_url}}/we/products/{{ProductUID}}",
+							"host": [
+								"{{Base_url}}"
+							],
+							"path": [
+								"we",
+								"products",
+								"{{ProductUID}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Invite LIst",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"var results = jsonData['results'];",
+							"",
+							"if (jsonData['detail'] != \"Not found.\"){",
+							"",
+							"    if (results.length > 0) {",
+							"        InvitationToken = results[0].token;",
+							"    } else {",
+							"        // Set a default value ",
+							"        InvitationToken = \"e692b9c7-ffcc-424a-8390-b858401eb844\";",
+							"    }",
+							"    pm.collectionVariables.set(\"InvitationToken\", InvitationToken);",
+							"}"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Base_url}}/we/invites",
+					"host": [
+						"{{Base_url}}"
+					],
+					"path": [
+						"we",
+						"invites"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "login access token",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "bappi142434@gmail.com",
+							"type": "text",
+							"disabled": true
+						},
+						{
+							"key": "password",
+							"value": "admintest",
+							"type": "text",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/token",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"token"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{Bearer_Token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"// pm.sendRequest({",
+					"//     url: pm.collectionVariables.get('Base_url') + \"/token\",",
+					"//     method: \"POST\",",
+					"//     body: {",
+					"//         mode: 'raw',",
+					"//         raw: JSON.stringify({",
+					"//             email: \"bappi142434@gmail.com\",",
+					"//             password:\"admintest\"        ",
+					"//         })",
+					"//     },",
+					"//     header: {",
+					"//         'Accept': '*/*',",
+					"//         'Content-Type': 'application/json',",
+					"//     },",
+					"// },function (err, res) {",
+					"//     console.log(res.json())",
+					"//     pm.collectionVariables.set(\"Bearer_Token\", res.json().access);",
+					"// })"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "Base_url",
+			"value": "http://127.0.0.1:8000/api/v1",
+			"type": "string"
+		},
+		{
+			"key": "Bearer_Token",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MjMwNDI4LCJpYXQiOjE2NzcxNDQwMjgsImp0aSI6Ijk1N2UwNGU1NmIzMjRkZTQ5OTY5MDY5YWQ0ZGU3OWNhIiwidXNlcl9pZCI6MX0.RXKDK9drPUJszlSsDZ6KeYmW5KfUiu6pk1Ufx2ey9zk",
+			"type": "string"
+		},
+		{
+			"key": "projectUId",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "projectSlug",
+			"value": ""
+		},
+		{
+			"key": "productSlug",
+			"value": ""
+		},
+		{
+			"key": "productImageSlug",
+			"value": ""
+		},
+		{
+			"key": "ProjectSlug",
+			"value": ""
+		},
+		{
+			"key": "UserSlug",
+			"value": ""
+		},
+		{
+			"key": "OrganizationSlug",
+			"value": ""
+		},
+		{
+			"key": "NewsSlug",
+			"value": ""
+		},
+		{
+			"key": "FileSlug",
+			"value": ""
+		},
+		{
+			"key": "FileUID",
+			"value": ""
+		},
+		{
+			"key": "GroupSlug",
+			"value": ""
+		},
+		{
+			"key": "EmailUID",
+			"value": ""
+		},
+		{
+			"key": "OrganizationUID",
+			"value": ""
+		},
+		{
+			"key": "PubProductSlug",
+			"value": ""
+		},
+		{
+			"key": "CollectionSlug",
+			"value": ""
+		},
+		{
+			"key": "BrandUID",
+			"value": ""
+		},
+		{
+			"key": "CollectionUID",
+			"value": ""
+		},
+		{
+			"key": "GroupUID",
+			"value": ""
+		},
+		{
+			"key": "MemberUID",
+			"value": ""
+		},
+		{
+			"key": "GroupFileUID",
+			"value": ""
+		},
+		{
+			"key": "GroupImageUID",
+			"value": ""
+		},
+		{
+			"key": "ImageUID",
+			"value": ""
+		},
+		{
+			"key": "InvitationUID",
+			"value": ""
+		},
+		{
+			"key": "InvitationToken",
+			"value": ""
+		},
+		{
+			"key": "NewsUID",
+			"value": ""
+		},
+		{
+			"key": "NewsFileUID",
+			"value": ""
+		},
+		{
+			"key": "NewsImageUID",
+			"value": ""
+		},
+		{
+			"key": "PartnerUID",
+			"value": ""
+		},
+		{
+			"key": "ProductUID",
+			"value": ""
+		},
+		{
+			"key": "ProductFileUID",
+			"value": ""
+		},
+		{
+			"key": "ProductImageUID",
+			"value": ""
+		},
+		{
+			"key": "ProjectParticipantUID",
+			"value": ""
+		},
+		{
+			"key": "ProjectFileUID",
+			"value": ""
+		},
+		{
+			"key": "ProjectImageUID",
+			"value": ""
+		},
+		{
+			"key": "OrganizationUserUID",
+			"value": ""
+		},
+		{
+			"key": "GroupMemberSlug",
+			"value": ""
+		}
+	]
+}

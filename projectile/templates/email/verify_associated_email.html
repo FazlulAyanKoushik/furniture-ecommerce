@@ -1,0 +1,16 @@
+<p>Hello {{ instance.user.first_name }},</p>
+
+You have added a new associated email address ({{ instance.email }}) to Your
+account. It was added from IP address: {{ instance.ip_address }} and was created
+at {{ instance.created_at|date:"D d M Y" }} {{ instance.created_at|time:"H:i"
+}}.
+
+<p><a href="{{ link }}" target="_blank">{{ cta_phrase }}</a></p>
+
+<p>If this is NOT you. Please discard this email.</p>
+
+<p>--</p>
+
+<p>Best regards,</p>
+
+<p>Team Supplers</p>

@@ -1,0 +1,22 @@
+<p>Hello {{ user_proxy.user.first_name }},</p>
+
+{% if user_proxy.referrer %}
+<p>
+  You have been invited to Supplers by {{ user_proxy.referrer.user.get_name }} @
+  {{ user_proxy.referrer.organization.name }}!
+</p>
+{% else %}
+<p>You have been invited to Supplers!</p>
+{% endif %}
+
+<p><a href="{{ link }}" target="_blank">{{cta_phrase}}</a></p>
+
+<p>--</p>
+
+<p>
+  <i>Supplers is a community based network for suppliers and retailers.</i>
+</p>
+
+<p>Best regards,</p>
+
+<p>Team Supplers</p>
